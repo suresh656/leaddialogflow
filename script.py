@@ -57,8 +57,13 @@ def posti():
     #session = request.json["session"]
     #querytext = request.json["querytext"]
     #mobilenumber = request.json["mobilenumber"]
-    respo = {"fulfillmentText": "This is the response","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+    if(len(mobilenumber)<=10)
+    respo = {"fulfillmentText": "Enter the OTP send to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
     return jsonify(respo)
+    else:
+    respo = {"fulfillmentText": "Please enter valid mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+    return jsonify(respo)
+        
 
 @app.route('/about/')
 def about():
