@@ -52,14 +52,14 @@ def geti():
     return jsonify(resp)
 
 @app.route('/ost/',methods=["POST"])
-def posti():
+def posti(mobilenumber):
     responseId = request.json["responseId"]
     #session = request.json["session"]
     #querytext = request.json["querytext"]
     #mobilenumber = request.json["mobilenumber"]
     respo = {"fulfillmentText": "Enter the OTP send to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
     return jsonify(respo)
- def post1():
+ def posti(otp):
     responseId = request.json["responseId"]
     #session = request.json["session"]
     #querytext = request.json["querytext"]
