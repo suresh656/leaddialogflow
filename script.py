@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 #from werkzeug.wrappers import Request, Response
-
+import re
 app =Flask(__name__)
 
 #@Request.application
@@ -56,8 +56,10 @@ def posti():
     responseId = request.json["responseId"]
     #session = request.json["session"]
     #querytext = request.json["querytext"]
-    #mobilenumber = request.json["mobilenumber"]
-    respo = {"fulfillmentText": "Enter the OTP send to your mobile number" + responseId,"fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+    mobilenumber = request.json["mobilenumber"]
+    #mobnum = re.match(r'^[6789]\d{9}$',mobilenumber)
+    #if(mobnum)
+    respo = {"fulfillmentText": "Enter the OTP send to your mobile number" + mobilenumber,"fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
     return jsonify(respo)
 
 @app.route('/about/')
