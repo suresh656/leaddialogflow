@@ -1,1 +1,1 @@
-web: gunicorn script:app
+web: Werkzeug script:app
