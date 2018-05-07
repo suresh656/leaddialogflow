@@ -1,6 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 #from werkzeug.wrappers import Request, Response
 import re
+#import json
+#from pprint import pprint
+
 app =Flask(__name__)
 
 #@Request.application
@@ -46,7 +49,7 @@ def plot():
 def home():
     return render_template("home.html")
 
-@app.route('/get/',methods=["GET"])
+@app.route('/ome/',methods=["GET"])
 def geti():
     resp = {"username": "kkk"}
     return jsonify(resp)
@@ -61,7 +64,7 @@ def posti():
                 if item == "intent":
                     for option in req[header][item]:
                         if option == "displayName":
-                            if req[header][item][option] == "Greeting":
+                            if req[header][item][option] == "SharingMobile":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
@@ -74,11 +77,12 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
-                            respo = {"fulfillmentText": "NOT greeting intent ","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                            respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]
     #querytext = request.json["querytext"]
     #mobilenumber = request.json["mobilenumber"]
+
 
 @app.route('/about/')
 def about():
