@@ -55,7 +55,9 @@ def geti():
 def posti():
     responseId = request.json["responseId"]
     #session = request.json["session"]
-    #querytext = request.json["querytext"]
+    queryResult = request.json["queryResult"]
+    querytext = request.json["querytext"]
+    parameters = request.json["parameters"]
     mobilenumber = request.json["mobilenumber"]
     #mobnum = re.match(r'^[6789]\d{9}$',mobilenumber)
     #if(mobnum)
