@@ -1,1 +1,1 @@
-web: Werkzeug script:app
+web: guincorn script:app
