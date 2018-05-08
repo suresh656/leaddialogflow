@@ -1,1 +1,1 @@
-web: guincorn script:app
+web: gunicorn script:app
