@@ -64,7 +64,7 @@ def posti():
                 if item == "intent":
                     for option in req[header][item]:
                         if option == "displayName":
-                            if req[header][item][option] == "SharingMobile":
+                            if req[header][item][option] == "Greeting":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
@@ -77,7 +77,7 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
-                            respo = {"fulfillmentText": "","fulfillmentMessages": "this is not greeting intent","source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                            respo = {"fulfillmentText": "this is not greeting intent","fulfillmentMessages": "","source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]
     #querytext = request.json["querytext"]
