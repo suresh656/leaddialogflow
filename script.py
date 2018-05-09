@@ -64,7 +64,7 @@ def posti():
                 if item == "intent":
                     for option in req[header][item]:
                         if option == "displayName":
-                            if req[header][item][option] == "Greeting":
+                            if req[header][item][option] == "askmobile":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
