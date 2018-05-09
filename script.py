@@ -77,7 +77,7 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
-                            elif req[header][item][option] == "askmobile":
+                            elif req[header][item][option] == "askotp":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
