@@ -85,7 +85,7 @@ def posti():
                                                 p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "what are you looking for ? Apply Loan,Track Your Loan Status,Customer Service,Track Your SR Status","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "what are you looking for ? Apply Loan,Track Your Loan Status,Customer Service,Track Your SR Status","fulfillmentMessages": [{"card":{"buttons": [{"text": "Apply Loan", "postback": "https://assistant.google.com/"}]}}],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
