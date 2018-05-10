@@ -68,7 +68,7 @@ def posti():
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
-                                            if para == "mobilenumber":
+                                            if para == "mobileNumber":
                                                 p = re.compile(r'^[6789]\d{9}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
