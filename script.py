@@ -86,10 +86,13 @@ def posti():
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
                                                     respo = {"fulfillmentText": "Otp Verified successfully..... what are you looking for ? Apply Loan,Track Your Loan Status,Customer Service,Track Your SR Status","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
-                                                    return jsonify(respo)
+                                                    return jsonify(respo)                    
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
-                                                    return jsonify(respo)               
+                                                    return jsonify(respo)   
+                            elif req[header][item][option] == "vehicleloan"
+                                 respo = {"fulfillmentText": "Lead creation successful! Lead ID 149875 has been assigned to this SFE,he will contact you further. ","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                 return jsonify(respo)                      
                             respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]
