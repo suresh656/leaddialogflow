@@ -90,6 +90,9 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
                                                     return jsonify(respo)
+                            elif req[header][item][option] == "applyloan":
+                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "vehicle"}}
+                                 return jsonify(respo)                   
                             elif req[header][item][option] == "askfname":
                                 for itm in req[header]:
                                     if itm == "parameters":
@@ -102,9 +105,22 @@ def posti():
                                                     return jsonify(respo)                    
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter your valid first name","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "fname"}}
+                                                    return jsonify(respo)
+                            elif req[header][item][option] == "asklname":
+                                for itm in req[header]:
+                                    if itm == "parameters":
+                                        for para in req[header][itm]:
+                                            if para == "lastName":
+                                                p = re.compile(r'^\d{6}$',re.I|re.M)
+                                                print (req[header][itm][para])
+                                                if p.match(str(req[header][itm][para])):
+                                                    respo = {"fulfillmentText": "Please enter your Pincode","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "pincode"}}
+                                                    return jsonify(respo)                    
+                                                else:
+                                                    respo = {"fulfillmentText": "Please enter your valid last name","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "lname"}}
                                                     return jsonify(respo)                    
                             elif req[header][item][option] == "Vehicleloan":
-                                 respo = {"fulfillmentText": "Lead creation successful! Lead ID 149875 has been assigned to this SFE,he will contact you further. ","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "fname"}}
                                  return jsonify(respo)                      
                             respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
