@@ -95,7 +95,7 @@ def posti():
                                     if itm == "parameters":
                                         for para in req[header][itm]:
                                             if para == "firstName":
-                                                p = re.compile(r'^[A-za-z]$',re.I|re.M)
+                                                p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
                                                     respo = {"fulfillmentText": "Please enter your last name","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "lname"}}
