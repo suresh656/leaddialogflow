@@ -85,13 +85,13 @@ def posti():
                                                 p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "loan"}}
+                                                    respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)                    
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
                                                     return jsonify(respo)
                             elif req[header][item][option] == "applyloan":
-                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "vehicle"}}
+                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                  return jsonify(respo)                   
                             elif req[header][item][option] == "askfname":
                                 for itm in req[header]:
