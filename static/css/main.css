@@ -4,6 +4,16 @@ body {
   font-family: "Helvertica Neue", Helvetica, Arial, sans-serif;
   color: #060;
 }
+.box {
+      display: none;
+      width: 100%;
+    }
+
+    a:hover + .box, .box:hover{
+      display:block;
+      position: absolute;
+      z-index:100;
+    }
 
 /*
  * Formatting the header area
