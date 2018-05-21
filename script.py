@@ -77,6 +77,9 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "mobile"}}
                                                     return jsonify(respo)
+							elif req[header][item][option] == "askmobile - fallback":
+                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "mobile"}}
+                                 return jsonify(respo)    
                             elif req[header][item][option] == "askotp":
                                 for itm in req[header]:
                                     if itm == "parameters":
@@ -90,6 +93,9 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
                                                     return jsonify(respo)
+							elif req[header][item][option] == "askotp - fallback":
+                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
+                                 return jsonify(respo)                       
                             elif req[header][item][option] == "applyloan":
                                  respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                  return jsonify(respo)                   
