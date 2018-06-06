@@ -3,16 +3,25 @@
   <head>
     <title>Flask App</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}"></link>
+  <!--Start of Zendesk Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://console.dialogflow.com/api-client/demo/embedded/a63cc976-5aa8-4a7c-a0f7-334431c8cd0b";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zendesk Chat Script-->
   </head>
   <body>
     <header>
       <div class="container">
-        <h1 class="logo">CHOLA web app</h1>
+        <h1 class="logo">Kishore's web app</h1>
         <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('HOME') }}">Home</a></li>
-            <li><a href="{{ url_for('ADOUT') }}">About</a></li>
-            <li><a href="{{ url_for('PLOT') }}">Plot</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('plot') }}">Plot</a></li>
           </ul>
         </strong></nav>
       </div>
