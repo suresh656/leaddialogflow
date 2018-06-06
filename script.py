@@ -110,7 +110,7 @@ def posti():
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
-                                            if para == "otp":
+                                            if para == "lastName":
                                                 p = re.compile(r'^[A-Za-z ]{1,50}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
@@ -123,14 +123,14 @@ def posti():
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
-                                            if para == "otp":
+                                            if para == "pincode":
                                                 p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "Otp verified Sucessfully, What are you Looking for?Apply Loan,Track loan status,raise Service request","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                             elif req[header][item][option] == "isNewVehicle":
                                  respo = {"fulfillmentText": "Lead creation successful! Lead ID 149875 has been assigned to this SFE,he will contact you further. ","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
