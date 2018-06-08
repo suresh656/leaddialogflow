@@ -130,7 +130,7 @@ def posti():
                                                     respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "PLease enter valid Pincode to proceed","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                             elif req[header][item][option] == "askcategory":
                                  respo = {"fulfillmentText": "Lead creation successful! Lead ID 149875 has been assigned to this SFE,he will contact you further. ","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
