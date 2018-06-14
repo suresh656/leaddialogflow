@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 #from werkzeug.wrappers import Request, Response
 import re
-#import json
+import json
 #from pprint import pprint
 
 app =Flask(__name__)
@@ -133,7 +133,23 @@ def posti():
                                                     respo = {"fulfillmentText": "PLease enter valid Pincode to proceed","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                             elif req[header][item][option] == "askcategory":
-                                 respo = {"fulfillmentText": "Lead creation successful! Lead ID 149875 has been assigned to this SFE,he will contact you further. ","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                def printResponse():
+                                    print ("JSON         : ", r.json())
+                                    print ("")
+                                mobi = req['queryResult']['outputContexts'][0]['parameters']['mobileNumber']
+                                fname = req['queryResult']['outputContexts'][0]['parameters']['firstName']
+                                lname = req['queryResult']['outputContexts'][0]['parameters']['lastName']
+                                pin = req['queryResult']['outputContexts'][0]['parameters']['pincode']
+                                new = 'true'
+                                id = req['queryResult']['outputContexts'][0]['parameters']['categoryID']   
+                                payload = {"firstName":fname,"lastName":lname,"mobileNumber":mobi,"landLineNo":"","dateOfBirth":"","emailID":"","gender":""
+                                            ,"employment":"","addressDetails":{"addressLine1":"","addressLine2":"","addressLine3":"","city":"","doorNo":"",
+                                            "pincode":pin,"state":""},"loanAmount":"","vehicle":{"isNewVehicle":new,"registrationNo":"","categoryID":id,"modelID":""}
+                                            ,"remarks":"","sourceID":"DEALERPORTAL","soruceRefID":"12596","uniqueID":""}
+
+                                r = requests.post('https://eastore.chola.murugappa.com/lead/1.0.0/DealerPortal/NewLead', json=payload, headers = {"Content-Type":"application/json","Authorization":"Bearer e5ac747f-57c0-3444-975a-b0d888772f91"})
+                                printResponse() 
+                                respo = {"fulfillmentText": ""r.json(),"fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                  return jsonify(respo)
                             respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
