@@ -149,7 +149,7 @@ def posti():
 
                                 r = requests.post('https://eastore.chola.murugappa.com/lead/1.0.0/DealerPortal/NewLead', json=payload, headers = {"Content-Type":"application/json","Authorization":"Bearer e5ac747f-57c0-3444-975a-b0d888772f91"})
                                 printResponse() 
-                                respo = {"fulfillmentText": ""r.json(),"fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                  return jsonify(respo)
                             respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
